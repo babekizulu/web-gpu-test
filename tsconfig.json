@@ -9,8 +9,9 @@
     ],
     "types": [
       "node",
-      "@webgpu/types"
+      "@webgpu/types",
     ],
+    "typeRoots": ["./node_modules/@webgpu/types", "./node_modules/@types", "./src/types"],
     "module": "es2015",
     "esModuleInterop": true,
     "strict": true,

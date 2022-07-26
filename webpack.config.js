@@ -12,7 +12,7 @@ module.exports = {
     },
     devtool: "source-map",
     resolve: {
-        extensions: ['.js', '.ts']
+        extensions: ['.js', '.ts', '.tsx']
     },
     module: {
         rules: [
@@ -27,7 +27,12 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"]
+            },
+            {
+                test: /\.(wgsl|glsl|vs|fs)$/,
+                loader: 'ts-shader-loader'
             }
         ]
-    }
+    },
+    types: ["@webgpu/types", "./src/types/shader.d.ts"]
 };
